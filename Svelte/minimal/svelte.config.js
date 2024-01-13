@@ -1,0 +1,26 @@
+import adapter from '@sveltejs/adapter-auto';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	kit: {
+		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
+		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
+		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
+		adapter: adapter()
+	},
+	onwarn: (warning, handler) => {
+		if (warning.code.startsWith('a11y-')) {
+			return;
+		}
+		handler(warning);
+	},
+	handleMissingId: (request) => {
+		// You can customize the behavior here
+		return {
+			statusCode: 404, // or any other appropriate status code
+			html: '<p>Element with ID not found</p>',
+		};
+	},
+};
+
+export default config;
