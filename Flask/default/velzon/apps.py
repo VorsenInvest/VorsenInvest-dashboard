@@ -312,4 +312,9 @@ def job_new():
 @apps.route('/apps/job/statistics')
 @login_required
 def job_statistics():
-    return render_template('apps/job/apps-job-statistics.html')          
+    return render_template('apps/job/apps-job-statistics.html')
+
+@apps.route('/apps/stocks/list')
+@login_required
+def stocks_list():
+    return render_template('apps/stocks/apps-stocks-list.html')           
