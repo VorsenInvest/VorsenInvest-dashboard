@@ -318,3 +318,28 @@ def job_statistics():
 @login_required
 def stocks_list():
     return render_template('apps/stocks/apps-stocks-list.html')           
+
+@apps.route('/apps/stocks/indicators')
+@login_required
+def stocks_indicators():
+    return render_template('apps/stocks/apps-stocks-indicators.html')           
+
+@apps.route('/apps/sectors/list')
+@login_required
+def sectors_list():
+    return render_template('apps/sectors/apps-sectors-list.html')  
+
+@apps.route('/apps/sectors/indicators')
+@login_required
+def sectors_indicators():
+    return render_template('apps/sectors/apps-sectors-indicators.html')  
+
+@apps.route('/apps/exchange/indicators')
+@login_required
+def exchange_indicators():
+    return render_template('apps/exchange/apps-exchange-indicators.html')  
+
+@apps.route('/apps/fair_price')
+@login_required
+def fair_price():
+    return render_template('apps/fair price/apps-fair-price.html') 
